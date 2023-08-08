@@ -1,0 +1,49 @@
+Guidelines:
+===========
+a) Put your name in comments at the beginning of the program.
+b) All kinds of error messages should be sent to the standard error only.
+c) Program should not produce any output other than required.
+
+Deliverables :
+
+	Folder name Copier-firstname containing the header file, c files for the function definitions and main function to handle the input through command line args
+	
+	Please provide Makefile to build the project.
+
+
+Program description:
+====================
+
+Copier is a program which performs copying or moving file(s) from different source directories to different destination directories. Programmer should be able to provide appropriate makefile for managing multiple sources and header file.
+one building the project from make, executable file called copier should be generated.
+
+on running copier like this 
+	./copier
+		should open up copier command prompt along with current working directory (CWD) path, where user should able to view and use the commands of copier program until user quits the program.
+		
+		Basic copier program should provide 6 basic functionalities.
+		On typing help in the copier command prompt, your (copier)program should provide all basic commands for accessing basic functionalities should be displayed as shown below.
+		
+			copier  CWD> help 
+				ls 
+				lls
+				dest [diffDir] 
+				src  [diffDir]
+				copy -R file(s) *.c *.txt h*
+				move 
+			copier CWD>quit 
+
+	1	ls --> display contents in dest directory
+	2	lls --> display contents in src directory
+	3	dest --> change/show to dest directory
+	4	src --> change/show to src directory
+	5   copy 
+		copy --> copy all file(s) from src to dest 
+		copy -R --> copy all file(s) and sub directories recursively from src to dest 
+		copy -R *.c ---> copy all .c files recursively from src to dest 
+		copy -R d* --> copy all file starting with h recursively from src to dest 
+	
+	6 	move 
+		move --> performs same job as copy but deletes original files from src after copying.
+		
+			
