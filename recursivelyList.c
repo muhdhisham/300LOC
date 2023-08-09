@@ -49,9 +49,9 @@ void listFilesRecursively(char *basePath)
             strcat(path, "/");
             strcat(path, dp->d_name);
 
-            listFilesRecursively(path);
+            // listFilesRecursively(path);
         }
     }
 
-    closedir(dir);
+closedir(dir);
 }

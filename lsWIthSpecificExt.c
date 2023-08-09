@@ -38,7 +38,7 @@ void listFilesRecursively(const char *basePath, const char *targetExtension) {
 
 int main() {
     const char *directoryPath = "."; // Change this to your target directory
-    const char *targetExtension = ".txt"; // Change this to the desired extension
+    const char *targetExtension = ".c"; // Change this to the desired extension
     
     printf("Files with extension %s in directory %s:\n", targetExtension, directoryPath);
     listFilesRecursively(directoryPath, targetExtension);

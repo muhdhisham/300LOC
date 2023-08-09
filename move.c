@@ -5,7 +5,7 @@
  
 int main()
 {
-   char ch, source_file[20], target_file[20];
+   char ch, source_file[20], destin_file[20];
    FILE *source, *target;
  
    printf("Enter name of file to move\n");
@@ -20,9 +20,9 @@ int main()
    }
  
    printf("Enter name of target file\n");
-   gets(target_file);
+   gets(destin_file);
  
-   target = fopen(target_file, "w");
+   target = fopen(destin_file, "w");
  
    if( target == NULL )
    {

@@ -1,41 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
- 
-main()
+#include <string.h>
+
+void copyFile(char []);
+
+int main()
 {
-   char ch, source_file[20], target_file[20];
-   FILE *source, *target;
+   char ch, source_file[20], destin_file[20];
+   
+   copyFile("Data3.txt");
  
-   printf("Enter name of file to copy\n");
-   gets(source_file);
+   return 0;
+}
+
+
+void copyFile(char fileName[20]){
+   char ch, source_file[20], destin_file[100] = "C:\\Users\\muhdh\\Downloads\\300LOC-main-20230808T170351Z-001\\300LOC-main\\Halo\\";
+   FILE *source, *dest;
  
-   source = fopen(source_file, "r");
+   source = fopen(fileName, "r");
  
    if( source == NULL )
    {
-      printf("Press any key to exit...\n");
+      printf("Press any key to exit.......\n");
       exit(EXIT_FAILURE);
    }
  
-   printf("Enter name of target file\n");
-   gets(target_file);
+   strcpy(source_file, fileName);
+   // printf("%s", source_file);
  
-   target = fopen(target_file, "w");
+   dest = fopen(strcat(destin_file, source_file), "w");
+   printf("%s", destin_file);
+
  
-   if( target == NULL )
+   if( dest == NULL )
    {
+      perror("Error");
       fclose(source);
       printf("Press any key to exit...\n");
       exit(EXIT_FAILURE);
    }
  
    while( ( ch = fgetc(source) ) != EOF )
-      fputc(ch, target);
+      fputc(ch, dest);
  
    printf("File copied successfully.\n");
  
    fclose(source);
-   fclose(target);
- 
-   return 0;
+   fclose(dest);
 }
